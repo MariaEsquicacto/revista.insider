@@ -25,8 +25,98 @@
                 <li><a href="perfil.html">PERFIL</a></li>
                 <li><a href="jogos.html">JOGOS</a></li>
             </ul>
-        </nav>
+        </nav> 
     </header>
+    <main>
+
+            <div class="gallery">
+                <div class="nav prev" onclick="prevImage()">&lt;</div>
+                <img id="galleryImage" src="./img/alunoshome.png" alt="Imagem">
+                <div class="nav next" onclick="nextImage()">&gt;</div>
+            </div>
+            
+            <div class="inicio">
+                <h2>Matérias Escolares</h2>
+                <hr>
+            </div>
+
+            <div class="card">
+            <div class="materias">
+                <div class="divisao">
+                    <a href="">
+                        <img src="./img/matematica.png" alt="">
+                        <p>Matemática</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/quimica.png" alt="">
+                        <p>Química</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/fisica.png" alt="">
+                        <p>Física</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/educacaofisica.png" alt="">
+                        <p>Educação Física</p>
+                    </a>
+                </div>
+                <div class="divisao">
+                    <a href="">
+                        <img src="./img/portugues.png" alt="">
+                        <p>Lingua Portuguesa</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/historia.png" alt="">
+                        <p>História</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/sociologia.png" alt="">
+                        <p>Sociologia</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/filosofia.png" alt="">
+                        <p>Filosofia</p>
+                    </a>
+                </div>
+                <div class="divisao">
+                    <a href="">
+                        <img src="./img/geografia.png" alt="">
+                        <p>Geografia</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/biologia.png" alt="">
+                        <p>Biologia</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/ingles.png" alt="">
+                        <p>Ingles</p>
+                    </a>
+                    <a href="">
+                        <img src="./img/artes.png" alt="">
+                        <p>Artes</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="final">
+            <hr>
+        </div>
+
+            <!-- <div id="alunos">
+                <img src="./img/alunoshome.png" alt="">
+                <div class="txt">
+                <h1><strong>Como surgiu essa ideia?</strong></h1>
+                <p>A ideia da revista nasceu do desejo de criar um espaço onde a voz dos alunos pudesse ser ouvida e valorizada.
+                    Queríamos um meio de registrar os momentos especiais, divulgar conquistas, compartilhar aprendizados e dar visibilidade aos talentos que fazem parte da nossa comunidade. Assim, com o apoio de professores e estudantes engajados, surgiu este projeto, feito com dedicação e entusiasmo, para conectar a escola de uma forma mais interativa.</p>
+                <br>
+                <h1><strong>Porque a revista escolar é importante?</strong></h1>
+                <p>A revista escolar é mais do que um simples informativo; ela é uma janela para o talento, a criatividade e o conhecimento dos alunos. Por meio dela, podemos compartilhar conquistas, divulgar projetos, discutir temas relevantes e dar voz à comunidade estudantil. Além disso, é uma oportunidade para os alunos desenvolverem habilidades de escrita, design e trabalho em equipe.</p>
+                </div>
+            </div> -->
+
+            
+        </main>
     <script>
         class MobileNavbar{
             constructor(mobileMenu){
@@ -39,6 +129,24 @@
             addClickEvent(){
                 this.mobileMenu.addEventListener("click", () => console.log("Hey"));
             }
+        }
+
+        let images = [
+            "img/salasesi.jfif",
+            "img/sesi368.jfif"
+            
+        ];
+
+        let index = 0;
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            document.getElementById("galleryImage").src = images[index];
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("galleryImage").src = images[index];
         }
     </script>
 </body>
