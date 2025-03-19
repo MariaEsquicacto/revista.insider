@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="imagem">
+            </div>
+
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="">MENU</a></li>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="perfil.html"> PERFIL</a></li>
+                <li><a href="jogos.html">JOGOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="usuario">
+            <div class="card">
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <div class="info">
+                    <p>nome do ususario</p>
+                    <p>nivel</p>
+                </div>
+                <div class="criar">
+                    <p>Criar postagem</p>
+                </div>
+                <div class="apr">
+                    <p>Aprovar/reprovar conteúdo</p>
+                </div>
+            </div>
+        </section>
+        <div class="voltar">
+            <p>Voltar</p>
+        </div>
+    </main>
+
+
+
+    <script>
+        for (let i = 0; i < 1000; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            document.querySelector('header').appendChild(star); // ✅ Agora as estrelas estão no header
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 84}px`; // 🔹 Mantém as estrelas dentro da altura do header
+            star.style.width = `${Math.random() * 2 + 0.1}px`;
+            star.style.height = star.style.width;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        }
+
+        document.header.style.backgroundColor = "#000330";
+    </script>
+</body>
+
+</html>

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="imagem">
-                <img src="./img/sesi-logo-2.png" alt="">
+                <!-- <img src="./img/logo.png" alt=""> -->
             </div>
 
             <div class="mobile-menu">
@@ -25,22 +27,58 @@
                 <li><a href="perfil.html">PERFIL</a></li>
                 <li><a href="jogos.html">JOGOS</a></li>
             </ul>
-        </nav> 
+        </nav>
     </header>
     <main>
 
+        <div class="text">
             <div class="gallery">
                 <div class="nav prev" onclick="prevImage()">&lt;</div>
                 <img id="galleryImage" src="./img/alunoshome.png" alt="Imagem">
                 <div class="nav next" onclick="nextImage()">&gt;</div>
             </div>
-            
-            <div class="inicio">
-                <h2>Matérias Escolares</h2>
-                <hr>
+
+            <div class="conteudo">
+                <div class="conteudo2">
+                    <h1><strong>Como surgiu essa ideia?</strong></h1>
+                    <p>A ideia da revista nasceu do desejo de criar um espaço onde a voz dos alunos pudesse ser ouvida e
+                        valorizada.
+                        Queríamos um meio de registrar os momentos especiais, divulgar conquistas, compartilhar
+                        aprendizados e dar visibilidade
+                        aos talentos que fazem parte da nossa comunidade. Assim, com o apoio de professores e estudantes
+                        engajados, surgiu este
+                        projeto, feito com dedicação e entusiasmo, para conectar a escola de uma forma mais interativa.
+                    </p>
+                </div>
+
+                <div class="conteudo2">
+                    <h1><strong>Porque a revista escolar é importante?</strong></h1>
+                    <p>A revista escolar é mais do que um simples informativo; ela é uma janela para o talento, a
+                        criatividade e o conhecimento dos alunos. Por meio dela, podemos compartilhar conquistas,
+                        divulgar projetos, discutir temas relevantes e dar voz à comunidade estudantil. Além disso, é
+                        uma oportunidade para os alunos desenvolverem habilidades de escrita, design e trabalho em
+                        equipe.</p>
+                </div>
             </div>
 
-            <div class="card">
+
+        </div>
+
+        <div class="details">
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+        </div>
+
+        <div class="inicio">
+            <h2>Matérias Escolares</h2>
+            <hr>
+        </div>
+
+        <div class="card">
             <div class="materias">
                 <div class="divisao">
                     <a href="">
@@ -103,30 +141,43 @@
             <hr>
         </div>
 
-            <!-- <div id="alunos">
-                <img src="./img/alunoshome.png" alt="">
-                <div class="txt">
-                <h1><strong>Como surgiu essa ideia?</strong></h1>
-                <p>A ideia da revista nasceu do desejo de criar um espaço onde a voz dos alunos pudesse ser ouvida e valorizada.
-                    Queríamos um meio de registrar os momentos especiais, divulgar conquistas, compartilhar aprendizados e dar visibilidade aos talentos que fazem parte da nossa comunidade. Assim, com o apoio de professores e estudantes engajados, surgiu este projeto, feito com dedicação e entusiasmo, para conectar a escola de uma forma mais interativa.</p>
-                <br>
-                <h1><strong>Porque a revista escolar é importante?</strong></h1>
-                <p>A revista escolar é mais do que um simples informativo; ela é uma janela para o talento, a criatividade e o conhecimento dos alunos. Por meio dela, podemos compartilhar conquistas, divulgar projetos, discutir temas relevantes e dar voz à comunidade estudantil. Além disso, é uma oportunidade para os alunos desenvolverem habilidades de escrita, design e trabalho em equipe.</p>
-                </div>
-            </div> -->
+        <div class="details">
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+            <div class="caixa"></div>
+        </div>
 
-            
-        </main>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservado por &copy; EDUCA insider</p>
+    </footer>
     <script>
-        class MobileNavbar{
-            constructor(mobileMenu){
+        for (let i = 0; i < 1000; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            document.querySelector('header').appendChild(star); // ✅ Agora as estrelas estão no header
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 84}px`; // 🔹 Mantém as estrelas dentro da altura do header
+            star.style.width = `${Math.random() * 2 + 0.1}px`;
+            star.style.height = star.style.width;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        }
+
+        document.header.style.backgroundColor = "#000330";
+
+        class MobileNavbar {
+            constructor(mobileMenu) {
                 this.mobileMenu = document.querySelector(mobileMenu);
                 this.navList = document.querySelector(navList);
                 this.navLinks = document.querySelectorAll(navLinks);
                 this.activeClass = "active";
             }
 
-            addClickEvent(){
+            addClickEvent() {
                 this.mobileMenu.addEventListener("click", () => console.log("Hey"));
             }
         }
@@ -134,7 +185,7 @@
         let images = [
             "img/salasesi.jfif",
             "img/sesi368.jfif"
-            
+
         ];
 
         let index = 0;
@@ -150,4 +201,5 @@
         }
     </script>
 </body>
+
 </html>

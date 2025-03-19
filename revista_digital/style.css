@@ -35,7 +35,9 @@ header{
     width: 100%;
     height: 5%;
     z-index: 2;
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header img{
@@ -131,12 +133,12 @@ main{
 
 
 #detalhes{
-    color: red; /* Cor do texto */
-    text-shadow: 
+    color: white; /* Cor do texto */
+    /* text-shadow: 
     -1px -1px 0 white,  
      1px -1px 0 white,  
     -1px  1px 0 white,  
-     1px  1px 0 white; /* Criando a borda branca */
+     1px  1px 0 white; Criando a borda branca */
     font-family: "Ubuntu Condensed", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -161,7 +163,7 @@ main{
 }
 
 footer{
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     bottom: 0;
     height: 30px;
@@ -172,12 +174,15 @@ footer{
     z-index: 2;
 }
 
-footer p{
+header p{
     font-size: 40px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+    position: relative;
+    top: 20px;
+    right: 25px;
 }
 
 footer p:hover{
-    transform: scale(2);
+    transform: scale(1.1);
 }
