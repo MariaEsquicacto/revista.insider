@@ -120,6 +120,7 @@ main{
     display: inline-block;
     transform: rotate(-10deg);
     animation: pulsar 1.5s infinite ease-in-out;
+    cursor: pointer;
 
 }
 
