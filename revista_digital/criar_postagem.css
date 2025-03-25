@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+header {
+    height: 70px;
+    background-color: #000330;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(35, 34, 34, 0.375);
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    animation: move 5s linear infinite;
+    opacity: 0, 5;
+    z-index: 1;
+
+}
+
+@keyframes move {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+    margin-top: 7.5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.logo {
+    background-color: #000330;
+    z-index: 2;
+}
+
+.nav-list h3 {
+    color: #ffffff;
+    font-family: "Sigmar", sans-serif;
+    font-weight: 100;
+    font-size: 22px;
+}
+
+.nav-list p {
+    color: red;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    letter-spacing: 4px;
+    font-size: 19px;
+    margin-left: 5px;
+}
+
+.nav-list li {
+    /* display: inline; */
+    width: 80px;
+    height: 25px;
+    background-color: #000330;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+    /* transition: color 0.3s, background-color 0.3s; */
+}
+
+a:hover {
+    /* background-color: #000;
+    border-radius: 5px; */
+    opacity: 0.7;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 8px;
+}
+
+/* @media (max-width: 999px) {
+    body{
+        overflow-x: hidden;
+    }
+    .nav-list{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        background-color: #ec1302;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+    }
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+} */
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+/* .card {
+    width: 80%;
+    height: 70%;
+    border: 2px solid #002a77;
+    border-radius: 10px;
+} */
+
+.user {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-right: #002a77;
+}
+
+.img {
+    width: 8%;
+    height: auto;
+}
+
+.img img {
+    width: 180px;
+    border-radius: 90px;
+}
+
+
+.info-box {
+    border: 2px solid #000080;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 290px;
+}
+
+.divider {
+    width: 2px;
+    height: 180px;
+    background-color: #4c83d4;
+}
+
+.text-box {
+    border: 2px solid #000080;
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    margin-bottom: 10px;
+    
+}
+
+.conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8%;
+}
+
+.conteudo{
+    margin-top: 3%;
+    width: 520px;
+    height: 200px;
+    border: 2px solid #000080;
+    border-radius: 5px;
+}
+
+.buttons{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons button{
+    background-color: #000080;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 5px 6px #61616159;
+    /* width: 500px; */
+    margin: 0 50px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    transform: scale(1.05);
+}
+
+/* Garantir que o modal e o overlay apareçam quando visíveis */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    display: none; /* Inicialmente oculto */
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    text-align: center;
+    display: none; /* Inicialmente oculto */
+}
+
+/* Para exibir o modal e overlay */
+.overlay.show, .modal.show {
+    display: block;
+}

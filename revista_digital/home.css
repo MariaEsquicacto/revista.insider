@@ -224,7 +224,7 @@ main{
     transform: scale(1.02);
 }
 
-h1{
+h1, h2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     padding: 0px 0px 10px 0px;
@@ -243,13 +243,13 @@ h1{
 }
 
 .caixa{
-    width:250px;
+    width:220px;
     height: 70px;
     background-color: #000330;
 }
 
 .inicio{
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -258,7 +258,7 @@ h1{
 }
 
 hr{
-    width: 83%;
+    width: 70%;
     height: 1px;
     background-color: #000330;
     margin-left: 2%;
