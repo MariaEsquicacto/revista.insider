@@ -11,7 +11,7 @@ html {
 
 body {
     overflow-x: hidden;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header {
@@ -150,130 +150,120 @@ a:hover {
     transform: translateX(0);
 }
 
-main {
+main{
     width: 100%;
-    height: 100vh;
-    
+    height: 100%;
 }
 
-/* .card {
-    width: 80%;
-    height: 70%;
-    border: 2px solid #002a77;
-    border-radius: 10px;
-} */
-
-.user {
-    margin-top: 2%;
-    width: 100%;
+.user{
+    margin-top: 3%;
+    margin-left: 3%;
     display: flex;
+    justify-content: start;
     align-items: center;
-    justify-content: space-around;
-    border-right: #002a77;
 }
 
-.img {
-    width: 8%;
+.img{
+    width: 15%;
     height: auto;
 }
 
-.img img {
-    width: 180px;
-    border-radius: 90px;
+.img img{
+    width: 150px;
+    border-radius: 80px;
 }
 
-
-.info-box {
-    border: 2px solid #000080;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: 290px;
+.hr{
+    margin-top: 4%;
+    width: 100%;
 }
 
-.divider {
-    width: 2px;
-    height: 180px;
-    background-color: #4c83d4;
+.hr hr{
+    width: 90%;
+    height: 2px;
+    background-color: #000330;
 }
 
-.text-box {
-    border: 2px solid #000080;
-    padding: 10px;
-    border-radius: 5px;
-    width: 500px;
-    margin-bottom: 10px;
-    
+.hr p{
+    font-size: 35px;
+    margin-bottom: 15px;
+    margin-left: 15px;
 }
 
 .conteiner{
+    margin-top: 3%;
+    width: 100%;
+    height: auto;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-around;
-    gap: 8%;
 }
 
-.conteudo{
-    margin-top: 3%;
-    width: 520px;
-    height: 200px;
-    border: 2px solid #000080;
+.card1{
+    width: 27%;
+    height: 300px;
+    border: 2px solid #000330;
     border-radius: 5px;
+}
+
+.card1 p {
+    margin: 5px;
+    font-size: 15px;
 }
 
 .buttons{
-    margin-top: 3%;
+    margin-top: 1%;
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    /* gap: 20%; */
 }
 
-.buttons button{
-    background-color: #000080;
-    padding: 10px;
-    border-radius: 5px;
+.card2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40%;
+}
+
+.card2 button{
+    font-size: 15px;
+    width: 185px;
+    height: 30px;
+    cursor: pointer;
     border: none;
     color: #ffffff;
-    box-shadow: 0 5px 6px #61616159;
-    /* width: 500px; */
-    margin: 0 50px;
     transition: 0.3s ease-in-out;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
 }
 
-.buttons button:hover{
+.card2 button:hover, .voltar button:hover{
     transform: scale(1.05);
 }
 
-/* Garantir que o modal e o overlay apareçam quando visíveis */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    z-index: 1;
-    display: none; /* Inicialmente oculto */
+#verde{
+    background-color: green;
 }
 
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-    text-align: center;
-    display: none; /* Inicialmente oculto */
+#vermelho{
+    background-color: red;
 }
 
-/* Para exibir o modal e overlay */
-.overlay.show, .modal.show {
-    display: block;
+.voltar{
+    margin-top: 5%;
+    margin-left: 20px;
 }
+.voltar button{
+    background-color: #000330;
+    color: #ffffff;
+    width: 80px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+

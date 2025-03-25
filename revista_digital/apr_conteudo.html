@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprovar/reprovar conteúdo</title>
+    <link rel="stylesheet" href="apr_conteudo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Sigmar&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+
     <header>
         <nav>
             <div class="imagem">
-                <img src="./img/sesi-logo-2.png" alt="">
+                <!-- <img src="./img/logo.png" alt=""> -->
             </div>
 
             <div class="mobile-menu">
@@ -21,30 +32,86 @@
             <ul class="nav-list">
                 <li><a href="">MENU</a></li>
                 <li><a href="home.html">HOME</a></li>
-                <li><a href="perfil.html"> PERFIL</a></li>
+
+                <div class="logo">
+                    <h3>EDUCA</h3>
+                    <p id="insider">insider</p>
+                    <!-- <img src="" alt="livro">  -->
+                </div>
+
+                <li><a href="perfil.html">PERFIL</a></li>
                 <li><a href="jogos.html">JOGOS</a></li>
             </ul>
-        </nav> 
+        </nav>
     </header>
 
     <main>
-        <section class="user">
-            <div class="foto">
-                <img src="" alt="">
+        <section class="card">
+            <div class="user">
+                <div class="img">
+                    <img src="./img/user.png" alt="">
+                </div>
+                <div class="hr">
+                    <p>Pendentes</p>
+                    <hr>
+                </div>
             </div>
-            <div class="info">
-                <div class="nome">
-                    <p></p>
+
+            <div class="conteiner">
+                <div class="card1">
+                    <p>Título:</p>
+                    <p>Conteúdo:</p>
+                    <p>Autor:</p>
                 </div>
-                <div class="nivel">
-                    <p></p>
+                <div class="card1">
+                    <p>Título:</p>
+                    <p>Conteúdo:</p>
+                    <p>Autor:</p>
                 </div>
+                <div class="card1">
+                    <p>Título:</p>
+                    <p>Conteúdo:</p>
+                    <p>Autor:</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="card2">
+                    <button type="submit" id="verde">Aprovar</button>
+                    <button type="submit" id="vermelho">Reprovar</button>
+                </div>
+                <div class="card2">
+                    <button type="submit" id="verde">Aprovar</button>
+                    <button type="submit" id="vermelho">Reprovar</button>
+                </div>
+                <div class="card2">
+                    <button type="submit" id="verde">Aprovar</button>
+                    <button type="submit" id="vermelho">Reprovar</button>
+                </div>
+            </div>
+            <div class="voltar">
+                <button type="submit" id="voltar" onclick="voltarpag()">Voltar</button>
             </div>
         </section>
-
-        <div>
-            
-        </div>
     </main>
+
+    <script>
+        for (let i = 0; i < 1000; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            document.querySelector('header').appendChild(star); // ✅ Agora as estrelas estão no header
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 84}px`; // 🔹 Mantém as estrelas dentro da altura do header
+            star.style.width = `${Math.random() * 2 + 0.1}px`;
+            star.style.height = star.style.width;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        }
+
+        document.header.style.backgroundColor = "#000330";
+
+        function voltarpag(){
+            window.location.href = "perfil.html"
+        }
+    </script>
 </body>
+
 </html>

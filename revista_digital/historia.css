@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+}
+
+.img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 357px;
+}
+
+
+.title{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title h1{
+    font-size: 60px;
+}
+
+article{
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d68033;
+    padding: 8px;
+    width: 500px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.botao:hover{
+    transform: scale(1.05);
+}
+
+button{
+    color:  white;
+}
