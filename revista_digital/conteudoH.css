@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.voltar{
+    transition: 0.3s ease-in-out;
+    width: 30px;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.voltar p:hover{
+    transform: scale(1.05);
+}
+
+.voltar p{
+    font-size: 30px;
+}
+
+.title{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.titulo{
+    background-color: #d68033;
+    padding: 10px;
+}
+
+.titulo h1{
+    color: white;
+}
+
+.hr{
+    width: 68%;
+    height: 10px;
+    background-color: #d68033;
+}
+
+.img{
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 40%;
+    height: 40%;
+}
+.img img{
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+
+

@@ -58,7 +58,7 @@ main{
 }
 
 .title p{
-    color: #d68033;
+    color: #f6a174;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -82,7 +82,7 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cf803a;
+    background-color: #f6a174;
     padding: 15px;
     width: 500px;
     border: none;
@@ -107,7 +107,7 @@ button{
 .shape {
     width: 600px;
     height: 900px;
-    background-color: #D38B50;
+    background-color: #f6a174;
     clip-path: polygon(0% 0%, 85% 30%, 95% 75%, 100% 100%, 100% 0%, 0% 0%);
 }
 
@@ -117,7 +117,7 @@ button{
     left: 20%;
     width: 80%;
     height: 60px;
-    background-color: #D38B50;
+    background-color: #f6a174;
     clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 100% 90%, 90% 80%, 0% 0%);
 }
 
@@ -128,7 +128,7 @@ button{
 #lateral{
     width: 200px;
     height: 552px;
-    background-color: #D38B50;
+    background-color:#f6a174;
     /* clip-path: polygon(80% 0%, 0% 100%, 0% 0%, 0% 0%, 0% 0%, 0% 0%); 
     */
     clip-path: polygon(0% 0%, 22% 60%, 40% 100%, 0% 100%, 0% 100%);
@@ -142,5 +142,3 @@ button{
     height: 60px;
     clip-path: polygon(0% 0%, 100% 90%, 100% 20%, 100% 90%, 0% 100%, 0% 0%);
 }
-
-
