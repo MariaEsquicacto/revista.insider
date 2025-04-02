@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+html{
+    width: 100%;
+    overflow: hidden;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+}
+
+.img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 357px;
+}
+
+.voltar{
+    position: relative;
+    left: 50px;
+    top: 50px;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+    width: 30px;
+}
+
+.voltar p:hover{
+    transform: scale(1.05);
+}
+
+.voltar p{
+    font-size: 30px;
+}
+
+.title{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 100px;
+}
+
+.title h1{
+    font-size: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    color: #000000;
+}
+
+.title p{
+    color: #6ccf6c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article{
+    margin-top: 10%;
+    left: 17%;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+}
+
+.conteudos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6ccf6c;
+    padding: 15px;
+    width: 500px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.botao img{
+    width: 50px;
+}
+
+.botao:hover{
+    transform: scale(1.02);
+}
+
+button{
+    color:  white;
+    font-size: 20px !important;
+}
+
+.shape {
+    width: 600px;
+    height: 900px;
+    background-color: #6ccf6c;
+    clip-path: polygon(0% 0%, 85% 30%, 95% 75%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+#cima {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 80%;
+    height: 60px;
+    background-color: #6ccf6c;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 100% 90%, 90% 80%, 0% 0%);
+}
+
+.container1{
+    position: relative;
+}
+
+#lateral{
+    width: 200px;
+    height: 552px;
+    background-color:#6ccf6c;
+    /* clip-path: polygon(80% 0%, 0% 100%, 0% 0%, 0% 0%, 0% 0%, 0% 0%); 
+    */
+    clip-path: polygon(0% 0%, 22% 60%, 40% 100%, 0% 100%, 0% 100%);
+}
+
+#baixo{
+    /* bottom: 30px; */
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
+    height: 60px;
+    clip-path: polygon(0% 0%, 100% 90%, 100% 20%, 100% 90%, 0% 100%, 0% 0%);
+}

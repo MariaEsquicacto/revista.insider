@@ -14,10 +14,12 @@ body{
 }
 
 header {
+    width: 100%;
     height: 70px;
     background-color: #000330;
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(35, 34, 34, 0.375);
+    /* position: fixed; */
 }
 
 .star{
@@ -53,6 +55,32 @@ nav {
     margin: 0;
     
 }
+
+/* .btn-menu{
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.linha{
+    width: 30px;
+    height: 1px;
+    background-color: #ffffff;
+    display: block;
+    margin: 10px auto;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-menu.ativar .linha:nth-child(1){
+    transform: translateY(10px) rotate(-45deg);
+}
+.btn-menu.ativar .linha:nth-child(3){
+    transform: translateY(-10px) rotate(45deg);
+}
+.btn-menu.ativar .linha:nth-child(2){
+    width: 0%;;
+} */
 
 .logo{
     background-color: #000330;
@@ -141,13 +169,85 @@ a:hover {
     transform: translateX(0);
 }
 
+.aberto{
+    width: 20%;
+    height: auto;
+    border: 1px solid black;
+    position: absolute;
+    display: none;
+    background-color: #ffffff;
+    z-index: 2;
+    animation: animacao 0.3s ease-in-out;
+}
+
+.linhahr{
+    width: 70%;
+    height: 2px;
+    margin: 10px auto;
+    background-color: black;
+}
+.conteiner2{
+    transition: 0.3s ease-in-out;
+}
+.conteiner2 h3{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px 70px;
+}
+.linhahr2{
+    width: 40%;
+    height: 2px;
+    margin: 10px auto;
+    background-color: black;
+}
+.linhahr3{
+    width: 70%;
+    height: 2px;
+    margin: 10px auto;
+    background-color: black;
+}
+
+
+.info h4{
+    color: red;
+    font-size: 18px;
+    font-family: "Caveat", cursive;
+    margin: 10px 110px;
+}
+.info a{
+    color: black;
+    display: block;
+    border: 1px dashed #000330;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+    font-size: 13px;
+    transition: 0.3 s ease-in-out;
+}
+
+.info a:hover{
+    transform: scale(1.01);
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
 main{
     width: 100%;
     height: 100%;
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    z-index: 2;
+    /* z-index: 2; */
     
 }
 
@@ -170,6 +270,7 @@ main{
     box-shadow: 0 4px 6px rgba(26, 15, 15, 0.651);
     border-radius: 10px;
     margin-top: 5%;
+    z-index: 0;
 }
 
 .gallery img {
@@ -221,7 +322,7 @@ main{
 }
 
 .conteudo:hover{
-    transform: scale(1.02);
+    transform: scale(0.9);
 }
 
 h1, h2{
@@ -294,14 +395,22 @@ hr{
 }
 
 .materias img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
+    /* box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.6),
+                        inset -3px -3px 5px rgba(0, 0, 0, 0.2),
+                        5px 5px 15px rgba(0, 0, 0, 0.3),
+                        -5px -5px 15px rgba(255, 255, 255, 0.8); */
 }
 
 .materias a:hover img {
     transform: scale(1.1);
+    /* box-shadow: inset 5px 5px 10px #ffffffb3,
+                        inset -5px -5px 10px rgba(0, 0, 0, 0.2),
+                        10px 10px 30px rgba(70, 70, 70, 0.4),
+                        -10px -10px 30px rgba(255, 255, 255, 0.9); */
 }
 
 .final{
@@ -334,6 +443,8 @@ hr{
     height: 550px;
     box-shadow: 10px 10px 10px  rgba(26, 15, 15, 0.651);
 }
+
+
 
 footer{
     margin-top: 5%;

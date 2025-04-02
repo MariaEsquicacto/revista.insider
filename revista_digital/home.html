@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Sigmar&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Sigmar&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -20,27 +22,60 @@
                 <!-- <img src="./img/logo.png" alt=""> -->
             </div>
 
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
+
 
             <ul class="nav-list">
-                <li><a href="">MENU</a></li>
+
+                <!-- <div class="btn-menu" id="btn-menu" onclick="menu()">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>
+                </div> -->
+
+                <li>
+
+                    <a href="#" onclick="abrir()" class="menu-button">MENU</a>
+                </li>
                 <li><a href="home.html">HOME</a></li>
 
                 <div class="logo">
-                 <h3>EDUCA</h3>
-                <p id="insider">insider</p>  
-                <!-- <img src="" alt="livro">  -->
+                    <h3>EDUCA</h3>
+                    <p id="insider">insider</p>
+                    <!-- <img src="" alt="livro">  -->
                 </div>
-                
+
                 <li><a href="perfil.html">PERFIL</a></li>
                 <li><a href="jogos.html">JOGOS</a></li>
             </ul>
         </nav>
     </header>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <section class="aberto" id="aberto">
+        <div class="conteiner2">
+            <div class="linhahr"></div>
+            <h3>Planejamentos</h3>
+            <div class="linhahr2"></div>
+            <div class="info">
+                <h4>MATÉRIAS</h4>
+                <a href="matematica.html">Matemática</a>
+                <a href="quimica.html">Química</a>
+                <a href="fisica.html">Física</a>
+                <a href="ef.html">Educação Física</a>
+                <a href="lp.html">Lingua Portugues</a>
+                <a href="historia.html">História</a>
+                <a href="socio.html">Sociologia</a>
+                <a href="filo.html">Filosofia</a>
+                <a href="geo.html">Geografia</a>
+                <a href="bio.html">Biologia</a>
+                <a href="ingles.html">Ingles</a>
+                <a href="artes.html">Artes</a>
+            </div>
+            <div class="linhahr3"></div>
+            <div class="info">
+                <h4>CARDÁPIO</h4>
+            </div>
+        </div>
+    </section>
     <main>
 
         <div class="text">
@@ -97,21 +132,21 @@
                         <img src="./img/matematica.png" alt="">
                         <p>Matemática</p>
                     </a>
-                    <a href="">
+                    <a href="quimica.html">
                         <img src="./img/quimica.png" alt="">
                         <p>Química</p>
                     </a>
-                    <a href="">
+                    <a href="fisica.html">
                         <img src="./img/fisica.png" alt="">
                         <p>Física</p>
                     </a>
-                    <a href="">
+                    <a href="ef.html">
                         <img src="./img/educacaofisica.png" alt="">
                         <p>Educação Física</p>
                     </a>
                 </div>
                 <div class="divisao">
-                    <a href="">
+                    <a href="lp.html">
                         <img src="./img/portugues.png" alt="">
                         <p>Lingua Portuguesa</p>
                     </a>
@@ -119,29 +154,29 @@
                         <img src="./img/historia.png" alt="">
                         <p>História</p>
                     </a>
-                    <a href="">
+                    <a href="socio.html">
                         <img src="./img/sociologia.png" alt="">
                         <p>Sociologia</p>
                     </a>
-                    <a href="">
+                    <a href="filo.html">
                         <img src="./img/filosofia.png" alt="">
                         <p>Filosofia</p>
                     </a>
                 </div>
                 <div class="divisao">
-                    <a href="">
+                    <a href="geo.html">
                         <img src="./img/geografia.png" alt="">
                         <p>Geografia</p>
                     </a>
-                    <a href="">
+                    <a href="bio.html">
                         <img src="./img/biologia.png" alt="">
                         <p>Biologia</p>
                     </a>
-                    <a href="">
+                    <a href="ingles.html">
                         <img src="./img/ingles.png" alt="">
                         <p>Ingles</p>
                     </a>
-                    <a href="">
+                    <a href="artes.html">
                         <img src="./img/artes.png" alt="">
                         <p>Artes</p>
                     </a>
@@ -197,35 +232,61 @@
         document.header.style.backgroundColor = "#000330";
 
         class MobileNavbar {
-            constructor(mobileMenu) {
-                this.mobileMenu = document.querySelector(mobileMenu);
-                this.navList = document.querySelector(navList);
-                this.navLinks = document.querySelectorAll(navLinks);
-                this.activeClass = "active";
+        constructor(mobileMenu) {
+            this.mobileMenu = document.querySelector(mobileMenu);
+            this.navList = document.querySelector(".nav-list"); // Certifique-se que essa classe existe no HTML
+            this.navLinks = document.querySelectorAll(".nav-links"); // Certifique-se que essa classe existe no HTML
+            this.activeClass = "active";
+        }
+
+        addClickEvent() {
+            this.mobileMenu.addEventListener("click", () => console.log("Hey"));
+        }
+
+        init() {
+            if (this.mobileMenu) {
+                this.addClickEvent();
             }
+        }
+    }
 
-            addClickEvent() {
-                this.mobileMenu.addEventListener("click", () => console.log("Hey"));
+    const mobileNavbar = new MobileNavbar(".mobile-menu");
+    mobileNavbar.init();
+
+    let images = [
+        "img/salasesi.jfif",
+        "img/sesi368.jfif"
+    ];
+
+    let index = 0;
+
+    function nextImage() {
+        index = (index + 1) % images.length;
+        console.log("Mudando para imagem:", images[index]);
+        document.getElementById("galleryImage").src = images[index];
+    }
+
+    function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        console.log("Mudando para imagem:", images[index]);
+        document.getElementById("galleryImage").src = images[index];
+    }
+     
+
+    function abrir(){
+        const menu = document.getElementById('aberto');
+        var overlay = document.getElementById('overlay');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                overlay.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+                overlay.style.display = 'block';
             }
-        }
+    }
 
-        let images = [
-            "img/salasesi.jfif",
-            "img/sesi368.jfif"
+        
 
-        ];
-
-        let index = 0;
-
-        function nextImage() {
-            index = (index + 1) % images.length;
-            document.getElementById("galleryImage").src = images[index];
-        }
-
-        function prevImage() {
-            index = (index - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[index];
-        }
     </script>
 </body>
 

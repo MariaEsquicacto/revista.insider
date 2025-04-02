@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogos - Caça Palavras</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #2c2c2c;
+      color: #fff;
+      margin: 20px;
+      user-select: none; /* Impede a seleção de texto */
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+    }
+    .word-list {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+    .word-list li {
+      list-style: none;
+      background-color: #ff4c4c;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .word-list li.found {
+      background-color: #2ecc71;
+      text-decoration: line-through;
+    }
+    .puzzle-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 35px);
+      grid-gap: 3px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .puzzle-cell {
+      width: 35px;
+      height: 35px;
+      background-color: #444;
+      color: #fff;
+      text-align: center;
+      line-height: 35px;
+      font-weight: bold;
+      border: 1px solid #ff4c4c;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    .puzzle-cell.selected {
+      background-color: #ff4c4c;
+    }
+  </style>
+</head>
+<body>
+  <h2>Caça Palavras</h2>
+  <p>Encontre as seguintes palavras na grade:</p>
+  <ul class="word-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JAVASCRIPT</li>
+    <li>WEB</li>
+  </ul>
+  
+  <div class="puzzle-grid" id="puzzle"></div>
+  
+  <script>
+    const rows = 10;
+    const cols = 10;
+    let grid = [];
+    
+    // Lista de palavras alvo
+    const targetWords = ["HTML", "CSS", "JAVASCRIPT", "WEB"];
+
+    // Cria a grade com letras aleatórias
+    for (let i = 0; i < rows; i++) {
+      grid[i] = [];
+      for (let j = 0; j < cols; j++) {
+        grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+      }
+    }
+
+    // Inserção das palavras com posições definidas (sem sobreposição inadequada):
+
+    // 1. "HTML" na linha 1, colunas 1 a 4
+    let word1 = "HTML";
+    for (let k = 0; k < word1.length; k++) {
+      grid[1][1 + k] = word1[k];
+    }
+
+    // 2. "CSS" na vertical: coluna 8, linhas 3, 4 e 5
+    let word2 = "CSS";
+    for (let k = 0; k < word2.length; k++) {
+      grid[3 + k][8] = word2[k];
+    }
+
+    // 3. "JAVASCRIPT" na linha 6, colunas 0 a 9
+    let word3 = "JAVASCRIPT";
+    for (let k = 0; k < word3.length; k++) {
+      grid[6][k] = word3[k];
+    }
+
+    // 4. "WEB" na linha 8, colunas 4 a 6
+    let word4 = "WEB";
+    for (let k = 0; k < word4.length; k++) {
+      grid[8][4 + k] = word4[k];
+    }
+
+    // Variável para armazenar a seleção atual
+    let selectedCells = [];
+
+    // Função que verifica se a seleção forma uma palavra alvo (considerando também a inversa)
+    function checkSelection() {
+      let currentWord = selectedCells.map(item => item.letter).join('');
+      let reversedWord = [...currentWord].reverse().join('');
+      
+      if (targetWords.includes(currentWord) || targetWords.includes(reversedWord)) {
+        // Marcar a palavra na lista
+        document.querySelectorAll(".word-list li").forEach(li => {
+          if (li.textContent.toUpperCase() === currentWord.toUpperCase() || 
+              li.textContent.toUpperCase() === reversedWord.toUpperCase()) {
+            li.classList.add("found");
+          }
+        });
+        // Reinicia a seleção: desmarca todas as células selecionadas
+        selectedCells.forEach(item => {
+          let cell = document.querySelector(`.puzzle-cell[data-row="${item.row}"][data-col="${item.col}"]`);
+          if(cell) cell.classList.remove("selected");
+        });
+        selectedCells = [];
+      }
+    }
+
+    // Função para lidar com o clique em cada célula
+    function handleCellClick(event) {
+      const cell = event.target;
+      const row = cell.getAttribute("data-row");
+      const col = cell.getAttribute("data-col");
+      
+      // Se a célula já estiver selecionada, desmarca
+      if (cell.classList.contains("selected")) {
+        cell.classList.remove("selected");
+        selectedCells = selectedCells.filter(item => !(item.row === row && item.col === col));
+      } else {
+        cell.classList.add("selected");
+        selectedCells.push({ row, col, letter: cell.textContent });
+      }
+      
+      checkSelection();
+      // Para depuração:
+      console.log("Seleção atual:", selectedCells.map(item => item.letter).join(''));
+    }
+
+    // Renderiza a grade na div "puzzle"
+    const puzzleDiv = document.getElementById("puzzle");
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        const cell = document.createElement("div");
+        cell.className = "puzzle-cell";
+        cell.textContent = grid[i][j];
+        cell.setAttribute("data-row", i);
+        cell.setAttribute("data-col", j);
+        cell.addEventListener("click", handleCellClick);
+        puzzleDiv.appendChild(cell);
+      }
+    }
+  </script>
+</body>
+</html>
