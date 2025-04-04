@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentos Artísticos</title>
+    <link rel="stylesheet" href="ma.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <section class="voltar">
+        <p onclick="voltarconteudos()"><i class="bi bi-arrow-left-circle"></i></p>
+    </section>
+
+    <section class="title">
+        <div class="titulo">
+            <h1>Movimentos Artisticos</h1>
+        </div>
+        <div class="hr"></div>
+    </section>
+
+    <section class="conteiner">
+        <div class="cards">
+            <div class="info">
+                <p>Barroco</p>
+                <div>
+                    <img src="./img/barroco.png" alt="">
+                    <button type="submit" id="lermais">Ler mais</button>
+                </div>
+            </div>
+            <div class="info">
+                <p>Pós-modernismo</p>
+                <div>
+                    <img src="./img/pos-modernismo.png" alt="">
+                    <button type="submit" id="lermais">Ler mais</button>
+                </div>
+            </div>
+            <div class="info">
+                <p>Surrealismo</p>
+                <div>
+                    <img src="./img/surrealismo.png" alt="">
+                    <button type="submit" id="lermais">Ler mais</button>
+                </div>
+            </div>
+            <div class="info">
+                <p>Futurismo</p>
+                <div>
+                    <img src="./img/futurismo.png" alt="">
+                    <button type="submit" id="lermais">Ler mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="meuModal" class="modal">
+        <div class="modal-content">
+            <div class="closex">
+               <span class="close">&times;</span> 
+            </div>
+          
+          <h2>Barroco</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sit cupiditate sapiente consequatur magnam enim id. Quibusdam sed illo dolor tempore voluptas a necessitatibus exercitationem similique, quae unde fuga voluptates?</p>
+        </div>
+      </div>
+
+    <footer></footer>
+
+    <script>
+    function voltarconteudos(){
+        window.location.href = "artes.html"
+    }
+    // Abrir modal
+    document.getElementById("lermais").addEventListener("click", function() {
+      document.getElementById("meuModal").style.display = "flex";
+    });
+
+    // Fechar modal ao clicar no X
+    document.querySelector(".close").addEventListener("click", function() {
+      document.getElementById("meuModal").style.display = "none";
+    });
+
+    // Fechar modal ao clicar fora do conteúdo
+    window.addEventListener("click", function(e) {
+      const modal = document.getElementById("meuModal");
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+    
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 
 html{
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 main{
@@ -111,6 +111,10 @@ button{
     clip-path: polygon(0% 0%, 85% 30%, 95% 75%, 100% 100%, 100% 0%, 0% 0%);
 }
 
+.img2{
+    margin-top: 10%;
+}
+
 #cima {
     position: absolute;
     top: 0;
@@ -126,6 +130,7 @@ button{
 }
 
 #lateral{
+    /* margin-top: 30px; */
     width: 200px;
     height: 552px;
     background-color:#4496d9;
@@ -136,8 +141,8 @@ button{
 
 #baixo{
     /* bottom: 30px; */
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    bottom: 4px;
     width: 80%;
     height: 60px;
     clip-path: polygon(0% 0%, 100% 90%, 100% 20%, 100% 90%, 0% 100%, 0% 0%);

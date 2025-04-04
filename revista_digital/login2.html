@@ -20,35 +20,28 @@
     </header>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="">
+            <form onsubmit="Cadastro(event)">
                 <h1>Cadastro</h1>
-                <!-- <div class="social-icons">
-                    <a href="" class="icon">a</a>
-                    <a href="" class="icon">a</a>
-                    <a href="" class="icon">a</a>
-                    <a href="" class="icon">a</a>
-                </div> -->
-                <!-- <span>or use your emaill for registron</span> -->
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Emaill">
-                <input type="password" placeholder="Senha">
-                <button type="submit" onclick="Cadastro()">cadastrar</button>
+                <input type="text" id="nome" placeholder="Nome de usuário" required>
+                <input type="password" id="senha" placeholder="Senha (máx. 8 caracteres)" maxlength="8" required>
+                <select id="nivel" required>
+                    <option value="" disabled selected>Selecione o nível</option>
+                    <option value="Usuario">Usuário</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Admin">Admin</option>
+                </select>
+                <button type="submit">Cadastrar</button>
+                <div id="mensagem"></div>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="home.html">
-                <h1>Login</h1> 
-                <!-- <div class="social-icons">
-                    <a href="" class="icon"></a>
-                    <a href="" class="icon"></a>
-                    <a href="" class="icon"></a>
-                    <a href="" class="icon"></a>
-                </div>   -->
-                <!-- <span>or use your email</span> -->
-                <input type="text" placeholder="Nome">
-                <input type="password" placeholder="Senha">
+            <form onsubmit="Login(event)">
+                <h1>Login</h1>
+                <input type="text" id="login_nome" placeholder="Nome de usuário" required>
+                <input type="password" id="login_senha" placeholder="Senha" required>
                 <a href="#" onclick="proximapag()">Esqueci minha senha</a>
-                <button type="submit" onclick="Login()">Login</button>
+                <button type="submit">Login</button>
+                <div id="login_mensagem"></div>
             </form>
         </div>
         <div class="toggle-container">
@@ -106,6 +99,77 @@
         function proximapag(){
             window.location.href = "esqueci_senha.html"
         }
+
+        async function Cadastro(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const senha = document.getElementById('senha').value;
+        const nivel = document.getElementById('nivel').value;
+
+        try {
+            const response = await fetch('http://localhost/api_revista/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_usuario: nome,
+                    senha_usuario: senha,
+                    nivel: nivel
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById('mensagem').innerText = 'Cadastro realizado com sucesso!';
+            } else {
+                document.getElementById('mensagem').innerText = 'Erro: ' + data.message;
+            }
+
+        } catch (error) {
+            document.getElementById('mensagem').innerText = 'Erro ao conectar com o servidor.';
+            console.error(error);
+        }
+    }
+
+    async function Login(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('login_nome').value;
+        const senha = document.getElementById('login_senha').value;
+
+        try {
+            const response = await fetch('http://localhost/api_revista/users?action=login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_usuario: nome,
+                    senha_usuario: senha
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById('login_mensagem').innerText = 'Login realizado com sucesso!';
+                // Aqui você pode salvar em localStorage ou cookies, se quiser
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 1000);
+            } else {
+                document.getElementById('login_mensagem').innerText = 'Usuário ou senha inválidos!';
+            }
+
+        } catch (error) {
+            document.getElementById('login_mensagem').innerText = 'Erro de conexão.';
+            console.error(error);
+        }
+    }
+
 
     </script>
 </body>

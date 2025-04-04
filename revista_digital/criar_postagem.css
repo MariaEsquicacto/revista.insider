@@ -197,14 +197,25 @@ main {
 }
 
 .divider {
+    margin-left: 10px;
     width: 2px;
     height: 180px;
     background-color: #4c83d4;
 }
-
-.text-box {
+.input #text-box{
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input{
+    display: block;
+    margin: 10px auto;
+    width: 30%;
+}
+.conteudo #text-box{
+    width: 555px;
+    height: 300px;
+}
+#text-box {
     border: 2px solid #002a77;
     padding: 10px;
     border-radius: 5px;
@@ -212,7 +223,6 @@ main {
     margin-bottom: 10px;
     
 }
-
 .conteiner{
     margin-left: 10px;
     display: flex;
@@ -220,16 +230,16 @@ main {
     justify-content: space-evenly;
     gap: 12%;
 }
-
 .conteudo{
     margin-top: 3%;
     width: 555px;
     height: 300px;
-    border: 2px solid #002a77;
-    border-radius: 5px;
+    /* border: 2px solid #002a77; */
+    /* border-radius: 5px; */
 }
 
-.conteudo p{
+.conteudo input{
+    
     font-size: 18px;
     padding: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
